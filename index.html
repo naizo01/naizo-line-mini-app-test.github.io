@@ -11,10 +11,15 @@
 
   <script>
     (async () => {
-      await liff.init({ liffId: '2007383574' });     // ③で取得したIDに差し替え
-      const profile = await liff.getProfile();         // テスターのLINEプロフィール取得
-      document.getElementById('msg').textContent =
-        `Hello, ${profile.displayName}!`;              // “Hello <名前>!” を表示
+      try {
+        await liff.init({ liffId: '2007383574' });     // ③で取得したIDに差し替え
+        const profile = await liff.getProfile();         // テスターのLINEプロフィール取得
+        document.getElementById('msg').textContent =
+          `Hello, ${profile.displayName}!`;              // “Hello <名前>!” を表示
+      } catch (error) {
+        document.getElementById('msg').textContent =
+          `Error: ${error.message}`;                    // エラーメッセージを表示
+      }
     })();
   </script>
 </body>
