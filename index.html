@@ -12,7 +12,7 @@
   <script>
     (async () => {
       try {
-        await liff.init({ liffId: '2007383574' });     // ③で取得したIDに差し替え
+        await liff.init({ liffId: '2007383574-Gj7PoZeX' });     // ③で取得したIDに差し替え
         const profile = await liff.getProfile();         // テスターのLINEプロフィール取得
         document.getElementById('msg').textContent =
           `Hello, ${profile.displayName}!`;              // “Hello <名前>!” を表示
